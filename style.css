@@ -149,21 +149,22 @@
         width: 95vw;
     }
     .WordsContainer .Box{
-        margin: 1px;
+        margin: 0.2vh;
         width: 8vh;
         height: 85%;
+        border-width: 0.3vh;
         line-height: 120%;
     }
     .Keyboard{
         height: 37vh;
     }
     .Keyboard .row{
-        height: 20%;  
+        height: 13vw;  
     }
     .Keyboard button{
-        height: 90%;
-        padding: 0 8px;
-        margin: 0 3px;
+        height: 10vw;
+        padding: 0 1.2vh;
+        margin: 0 0.5vh;
         border-radius: 3px;
     }
     
