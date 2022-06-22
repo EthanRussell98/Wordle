@@ -40,7 +40,7 @@
     height: 16.6%;
 }
 .WordsContainer .Box{
-    margin: 0 5px;
+    margin: 0 2px;
     width: 60px;
     height: 60px;
     border-style: solid;
@@ -149,7 +149,7 @@
         width: 95vw;
     }
     .WordsContainer .Box{
-        margin: 3px;
+        margin: 1px;
         width: 8vh;
         height: 85%;
         line-height: 120%;
