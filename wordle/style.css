@@ -1,0 +1,171 @@
+*{
+    margin: 0;
+    font-family: Verdana, serif; 
+}
+/*Header*/
+.Header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 50px;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: #d3d6da;
+    
+}
+.Header h1{
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    font-weight: 900;
+}
+/*Words*/
+.Words{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 440px;
+}
+.WordsContainer{
+    width: 500px;
+    max-width: 500px;
+    height: 95%;
+}
+.WordsContainer .Row{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 16.6%;
+}
+.WordsContainer .Box{
+    margin: 0 5px;
+    width: 60px;
+    height: 60px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #d3d6da;
+    font-size: 250%;
+    font-weight: 700;
+    text-align: center;
+    line-height: 150%;
+}
+
+/*Keyboard*/
+.Keyboard{
+    width: 100vw;
+    height: 200px;
+}
+.Keyboard .row{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 33.3%;  
+}
+.Keyboard button{
+    height: 90%;
+    padding: 0 15px;
+    margin: 0 3px;
+    border-style: none;
+    border-radius: 5px;
+    background-color: #d3d6da;
+    font-weight: 700;
+    cursor: pointer;
+}
+.Keyboard span {
+   font-size: 30px;
+   margin: 0 5px;
+  }
+
+/*Popups*/
+.popup{
+    position: absolute;
+    display: none;
+    width: 300px;
+    height: 100px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    left: 50%;
+    top: 120px;
+    transform: translate(-50%);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.gameOver{
+    position: absolute;
+    display: none;
+    width: 400px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    left: 50%;
+    top: 120px;
+    transform: translate(-50%);
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+    
+}
+.gameOver h2{
+    width: 100%;
+    height: 20%;
+    margin: 10px;
+    text-align: center;
+}
+.gameOver p{
+    display: flex;
+    width: 100%;
+    margin: 5px 20px;
+}
+.gameOver button{
+    display: flex;
+    align-self: center;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-width: 1px;
+    border-radius: 5px;
+    margin: 20px;
+}
+.gameOver button:hover{
+    background-color: #d3d6da;
+}
+/*MEDIAQUERY*/
+@media (max-width: 576px) { 
+    .Header{
+        height: 8vh;
+        border-width: 0.1vh;
+    }
+    .Header h1{
+        font-size: 6vh;
+    }
+    .Words{
+        height: 55vh;
+    }
+    .WordsContainer{
+        width: 95vw;
+    }
+    .WordsContainer .Box{
+        margin: 3px;
+        width: 8vh;
+        height: 85%;
+        line-height: 120%;
+    }
+    .Keyboard{
+        height: 37vh;
+    }
+    .Keyboard .row{
+        height: 20%;  
+    }
+    .Keyboard button{
+        height: 90%;
+        padding: 0 8px;
+        margin: 0 3px;
+        border-radius: 3px;
+    }
+    
+}
+
