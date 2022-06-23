@@ -2,6 +2,7 @@ let theWord = "";
 let theDefinition = "";
 // cycleNumber is used to define what the current input column is
 let cycleNumber = 1;
+// cycleLetter is used to define what the current input row is
 let cycleLetter = "A";
 
 async function getRandomWord(){
@@ -24,7 +25,7 @@ function useWord(word, definition){
     theWord = word;
     theDefinition = definition;
 }
-// Inputs letter clicked on keyboard to the cycleNumber column
+// Inputs letter clicked on keyboard to the cycleNumber column and cycleLetter row
 function inputLetter(letter){  
     switch(cycleNumber) {
         case 1:
@@ -75,11 +76,11 @@ function checkWord(){
     fetch('https://api.dictionaryapi.dev/api/v2/entries/en/' + inputWord)
         .then(res => res.json())
         .then(data => {
+            // Checks the word exists
             data.title ? popup("Word not found") :  compareWords(inputWord.toLowerCase());
         })
 }
-// The word exists
-
+// Compares the input word to the generated word
 function compareWords(myWord){
     for(i=0; i<5; i++){
         if(myWord.charAt(i) == theWord.charAt(i)){
@@ -103,6 +104,7 @@ function compareWords(myWord){
     }
     (myWord == theWord) ? gameOverPopup(true) : nextLine();
 }
+// Changes the letter to start on a new line
 function nextLine(){
     switch(cycleLetter) {
         case "A":
@@ -139,7 +141,8 @@ function popup(message){
         document.getElementById("popup").style.display = "none";
     }
 }
-
+// Displays when the game is over
+// Either win or lose
 function gameOverPopup(won){
     if (won){
     document.getElementById("gameOver").style.display = "flex";
