@@ -82,23 +82,31 @@ function checkWord(){
 }
 // Compares the input word to the generated word
 function compareWords(myWord){
+
+    
     for(i=0; i<5; i++){
         if(myWord.charAt(i) == theWord.charAt(i)){
             document.getElementById("Box"+ cycleLetter + (i+1)).style.backgroundColor = "#6aaa64";
             document.getElementById("Box"+ cycleLetter + (i+1)).style.borderColor = "#6aaa64";
             document.getElementById("Box"+ cycleLetter + (i+1)).style.color = "white";
-            continue;
+            document.getElementById("Key_" + myWord.charAt(i)).style.backgroundColor = "#6aaa64";
+            document.getElementById("Key_" + myWord.charAt(i)).style.color = "white";
+            continue
         }
         for(x=0; x<5; x++){
             if(myWord.charAt(i) != theWord.charAt(i) && myWord.charAt(i) == theWord.charAt(x)){
                 document.getElementById("Box"+ cycleLetter + (i+1)).style.backgroundColor = "#c9b458";
                 document.getElementById("Box"+ cycleLetter + (i+1)).style.borderColor = "#c9b458";
                 document.getElementById("Box"+ cycleLetter + (i+1)).style.color = "white";
+                document.getElementById("Key_" + myWord.charAt(i)).style.backgroundColor = "#c9b458";
+                document.getElementById("Key_" + myWord.charAt(i)).style.color = "white";
                 break
             }
             else if (myWord.charAt(i) != theWord.charAt(i) && myWord.charAt(i) != theWord.charAt(x)){
                 document.getElementById("Box"+ cycleLetter + (i+1)).style.backgroundColor = "#787c7e";
                 document.getElementById("Box"+ cycleLetter + (i+1)).style.color = "white";
+                document.getElementById("Key_" + myWord.charAt(i)).style.backgroundColor = "#787c7e";
+                document.getElementById("Key_" + myWord.charAt(i)).style.color = "white";
             }
         }
     }
