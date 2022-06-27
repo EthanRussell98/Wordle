@@ -1,5 +1,5 @@
 ## Wordle
-#### Remake of the web-based word game wordle using vanilla javascript.
+#### Remake of the web-based word game Wordle using vanilla javascript.
 ### About
 #### In this project I used a random word API to generate the words and a Dictionary API to check if users inputs are valid. Along with the use of javascript fundamentals.
 ####
