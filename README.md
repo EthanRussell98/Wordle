@@ -1,7 +1,7 @@
 ## Wordle
 #### Remake of the web-based word game Wordle using vanilla javascript.
 ### About
-#### In this project I used a random word API to generate the words and a Dictionary API to check if users inputs are valid. Along with a variety of javascript fundamentals.
+#### In this project I used a random word API to generate the words and a dictionary API to check if users inputs are valid. Along with a variety of javascript fundamentals.
 ####
 ### Deployment
 #### [My-Wordle-Application](https://ethanrussell98.github.io/Wordle/)
