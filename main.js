@@ -73,17 +73,32 @@ function checkWord(){
     for(i=1; i<=5; i++){
         inputWord += document.getElementById("Box"+ cycleLetter + i).innerHTML;
     }
-    fetch('https://api.dictionaryapi.dev/api/v2/entries/en/' + inputWord)
-        .then(res => res.json())
-        .then(data => {
-            // Checks the word exists
-            data.title ? popup("Word not found") :  compareWords(inputWord.toLowerCase());
+     fetch('https://api.dictionaryapi.dev/api/v2/entries/en/' + inputWord)
+         .then(res => res.json())
+         .then(data => {
+             // Checks the word exists
+             data.title ? popup("Word not found") :  compareWords(inputWord.toLowerCase());
         })
+
+    
 }
 // Compares the input word to the generated word
 function compareWords(myWord){
-
-    
+    let wordObj = {};
+    for(i=0; i<5; i++){
+        currentLetter = theWord.charAt(i);
+        if (currentLetter in wordObj){
+            wordObj[currentLetter]+=1;
+        }
+        else{
+            wordObj[currentLetter] = 1;
+        }
+    }
+    for(i=0; i<5; i++){
+        if(myWord.charAt(i) == theWord.charAt(i)){
+            wordObj[myWord.charAt(i)]-=1;
+        }
+    }
     for(i=0; i<5; i++){
         if(myWord.charAt(i) == theWord.charAt(i)){
             document.getElementById("Box"+ cycleLetter + (i+1)).style.backgroundColor = "#6aaa64";
@@ -94,7 +109,8 @@ function compareWords(myWord){
             continue
         }
         for(x=0; x<5; x++){
-            if(myWord.charAt(i) != theWord.charAt(i) && myWord.charAt(i) == theWord.charAt(x)){
+            if(myWord.charAt(i) != theWord.charAt(i) && myWord.charAt(i) == theWord.charAt(x) && wordObj[myWord.charAt(i)] > 0){
+                wordObj[myWord.charAt(i)]-=1;
                 document.getElementById("Box"+ cycleLetter + (i+1)).style.backgroundColor = "#c9b458";
                 document.getElementById("Box"+ cycleLetter + (i+1)).style.borderColor = "#c9b458";
                 document.getElementById("Box"+ cycleLetter + (i+1)).style.color = "white";
