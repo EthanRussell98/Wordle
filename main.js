@@ -3,7 +3,7 @@ let theDefinition = "";
 // cycleNumber is used to define what the current input column is
 let cycleNumber = 1;
 // cycleLetter is used to define what the current input row is
-let cycleLetter = "A";
+let cycleLetter = "A"; 
 
 async function getRandomWord(){
     // Gets a random word with length equal to wordLength
